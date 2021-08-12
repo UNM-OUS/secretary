@@ -1,0 +1,55 @@
+{
+    "name": "unmous/secretary-site",
+    "type": "project",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/UNM-OUS/ous_digraph_module.git"
+        }
+    ],
+    "require": {
+        "digraphcms/digraph-project-core": "~1",
+        "oomphinc/composer-installers-extender": "^1.1|^2",
+        "unmous/ous_digraph_module": "dev-main"
+    },
+    "autoload": {
+        "classmap": [
+            "digraph/scripts/"
+        ]
+    },
+    "config": {
+        "vendor-dir": "digraph/vendor/",
+        "sort-packages": true,
+        "platform": {
+            "php": "7.1.33"
+        }
+    },
+    "extra": {
+        "installer-types": [
+            "digraph-core",
+            "digraph-module",
+            "digraph-web"
+        ],
+        "installer-paths": {
+            "digraph/core/{$name}/": [
+                "type:digraph-core"
+            ],
+            "digraph/modules/{$name}/": [
+                "type:digraph-module"
+            ],
+            "web/": [
+                "type:digraph-web"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "DigraphProject\\Scripts\\Composer::installHandler"
+        ],
+        "post-update-cmd": [
+            "DigraphProject\\Scripts\\Composer::updateHandler"
+        ]
+    }
+}

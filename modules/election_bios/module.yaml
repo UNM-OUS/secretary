@@ -1,0 +1,40 @@
+permissions:
+  url:
+    _election-bios/*: [deny all, allow group editor]
+  add:
+    '*/election-bio-list': [deny all]
+    '*/election-bio': [deny all]
+    election-bio-list/election-bio: [allow group editor]
+
+types:
+  content:
+    election-bio-list: ${module.namespace}\Election
+    election-bio: ${module.namespace}\Bio
+
+strings:
+  urls:
+    common:
+      _election-bios/display: Election bio management
+
+navigation:
+  parents:
+    proper:
+      'election-bio-list/display': _election-bios/display
+
+actions:
+  categorical:
+    ousadmin:
+      election-bios: _election-bios/display
+
+image:
+  presets:
+    election-bio-portrait:
+      size: 400 700 inset
+      extension: jpg
+      save:
+        jpeg_quality: 90
+    election-bio-portrait-thumb:
+      size: 100 175 inset
+      extension: jpg
+      save:
+        jpeg_quality: 90
