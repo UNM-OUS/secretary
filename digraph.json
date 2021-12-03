@@ -1,0 +1,64 @@
+{
+   "package": {
+      "defaults": {
+         "fields": {
+            "site_name": "Office of the University Secretary"
+         }
+      }
+   },
+   "actions": {
+      "uiforguests": false,
+      "common": {
+         "_user/signedin": {
+            "_ousadmin": "ousadmin/display"
+         }
+      }
+   },
+   "permissions": {
+      "url": {
+         "*/versions": [
+            "allow group editor"
+         ],
+         "*/version-diff": [
+            "allow group editor"
+         ],
+         "ousadmin/*": [
+            "deny all",
+            "allow group editor"
+         ]
+      },
+      "add": {
+         "*/link-rule": [
+            "deny all",
+            "allow group admin"
+         ]
+      }
+   },
+   "timezone": "America/Denver",
+   "image": {
+      "driver": "gd"
+   },
+   "paths": {
+      "storage": "${paths.site}/digraph/storage",
+      "cache": "${paths.site}/digraph/cache"
+   },
+   "theme": {
+      "variables": {
+         "_override": {
+            "color_accent": "#d6a461"
+         }
+      }
+   },
+   "strings": {
+      "urls": {
+         "common": {
+            "ousadmin/*": "OUS Admin"
+         }
+      }
+   },
+   "templates": {
+      "theme": [
+         "unm-v1"
+      ]
+   }
+}
