@@ -23,7 +23,7 @@ class Bio extends Noun
         } else {
             $photo = '';
         }
-        $card .= "<h1><a href='" . $this->url() . "'>" . $photo . parent::name() . "</a></h1>";
+        $card .= "<h2><a href='" . $this->url() . "'>" . $photo . parent::name() . "</a></h2>";
         if ($this['title']) {
             $card .= '<p class="deck"><strong>' . $this['title'] . '</strong></p>';
         }
